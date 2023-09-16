@@ -4,6 +4,11 @@
 
 local util = require('fw.util.Util')
 
+_G.components = {
+    position = {},
+    color    = {}
+}
+
 function PositionComp(x,y)
     return {x=x, y=y, name="Position"}
 end
@@ -20,7 +25,7 @@ function hasComponent(componentList, entity, component)
 
     util.isString(component)
 
-    local components = componentList[component]
+    local components = _G.components[component]
     local componentExists = components[entity]
     return componentExists
 end
