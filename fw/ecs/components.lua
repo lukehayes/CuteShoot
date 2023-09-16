@@ -21,9 +21,18 @@ end
 -- Utility Functions
 ==============================================================================]]
 
+-- General add component function
 function addComponent(name, entity, component)
     local componentTable = _G.components[name]
     table.insert(componentTable, entity, component)
+end
+
+function addPositionComponent(entity, component)
+    addComponent('position', entity, component)
+end
+
+function addColorComponent(entity, component)
+    addComponent('color', entity, component)
 end
 
 
