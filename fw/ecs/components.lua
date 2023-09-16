@@ -2,6 +2,8 @@
 -- All components are defined in here.
 ==============================================================================]]
 
+local util = require('fw.util.Util')
+
 function PositionComp(x,y)
     return {x=x, y=y, name="Position"}
 end
@@ -15,6 +17,9 @@ end
 ==============================================================================]]
 
 function hasComponent(componentList, entity, component)
+
+    util.isString(component)
+
     local components = componentList[component]
     local componentExists = components[entity]
     return componentExists
