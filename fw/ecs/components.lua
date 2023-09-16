@@ -21,6 +21,12 @@ end
 -- Utility Functions
 ==============================================================================]]
 
+function addComponent(name, entity, component)
+    local componentTable = _G.components[name]
+    table.insert(componentTable, entity, component)
+end
+
+
 function hasComponent(componentList, entity, component)
 
     util.isString(component)

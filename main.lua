@@ -12,13 +12,11 @@ components = {
     color    = {}
 }
 
-table.insert(components.position, 1, PositionComp(100,100))
-table.insert(components.position, 2, PositionComp(300,100))
-table.insert(components.color, 2, ColorComp(0,1,0,1))
+addComponent('position', 1, PositionComp(300,400))
+addComponent('color',    1, ColorComp(0,0,1,1))
 
-
-print(#components.position)
-print(#components.color)
+addComponent('position', 2, PositionComp(100,400))
+addComponent('color',    2, ColorComp(1,0,0,1))
 
 
 function love.load()
