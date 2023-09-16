@@ -52,5 +52,10 @@ function utils.tableLengthRec(table)
     return count
 end
 
+function utils.isString(val)
+    local errMsg = 'The value '..val.. ' should be of type string. '
+    assert(type(val) == 'string', errMsg)
+end
+
 return utils
 
