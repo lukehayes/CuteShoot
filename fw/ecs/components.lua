@@ -13,7 +13,7 @@ function PositionComp(x,y)
     return {x=x, y=y, name="Position"}
 end
 
-function ColorComp(id, r,g,b,a)
+function ColorComp(r,g,b,a)
     return {r=r,g=g,b=b,a=a, name="Color"}
 end
 
