@@ -20,6 +20,7 @@ function love.load()
 end
 
 function love.update(dt)
+    systemMove(entities,dt)
 end
 
 function love.draw()
