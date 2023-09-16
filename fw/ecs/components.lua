@@ -6,7 +6,8 @@ local util = require('fw.util.Util')
 
 _G.components = {
     position = {},
-    color    = {}
+    color    = {},
+    timer    = {}
 }
 
 function PositionComp(x,y)
@@ -15,6 +16,10 @@ end
 
 function ColorComp(r,g,b,a)
     return {r=r,g=g,b=b,a=a, name="Color"}
+end
+
+function TimerComp(time, oneshot)
+    return {time=time, oneshot=oneshot}
 end
 
 --[[============================================================================
@@ -33,6 +38,10 @@ end
 
 function addColorComponent(entity, component)
     addComponent('color', entity, component)
+end
+
+function addTimerComponent(entity, component)
+    addComponent('timer', entity, component)
 end
 
 
