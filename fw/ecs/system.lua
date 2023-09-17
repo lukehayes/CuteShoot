@@ -2,6 +2,9 @@
 -- All systems are defined in here.
 ==============================================================================]]
 
+--[[============================================================================
+-- Draw System
+==============================================================================]]
 function systemDraw(entities)
 
     for i=1, #entities,1 do
@@ -10,14 +13,17 @@ function systemDraw(entities)
 
         if(color) then
             love.graphics.setColor(color.r, color.g, color.b, color.a)
-            love.graphics.rectangle("fill", transform.x, transform.y,100,100)
+            love.graphics.rectangle("fill", transform.x, transform.y,transform.w,transform.h)
         else
             love.graphics.setColor(1,0,1,1)
-            love.graphics.rectangle("fill", transform.x, transform.y,100,100)
+            love.graphics.rectangle("fill", transform.x, transform.y,50,50)
         end
     end
 end
 
+--[[============================================================================
+-- Move System
+==============================================================================]]
 function systemMove(entities, delta)
     for i=1, #entities,1 do
         transform = hasComponent(entities, i, "transform")
@@ -29,6 +35,9 @@ function systemMove(entities, delta)
     end
 end
 
+--[[============================================================================
+-- Timer System
+==============================================================================]]
 function systemTimer(entities, delta)
     for i=1, #entities,1 do
         timer = hasComponent(entities, i, "timer")
