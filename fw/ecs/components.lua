@@ -5,13 +5,15 @@
 local util = require('fw.util.Util')
 
 _G.components = {
-    position = {},
-    color    = {},
-    timer    = {}
+    transform = {},
+    color     = {},
+    timer     = {}
 }
 
-function PositionComponent(x,y)
-    return {x=x, y=y}
+function TransformComponent(x,y,w,h)
+    w = w or 50
+    h = h or 50
+    return {x=x, y=y, w=w, h=h}
 end
 
 function ColorComponent(r,g,b,a)
@@ -32,8 +34,8 @@ function addComponent(name, entity, component)
     table.insert(componentTable, entity, component)
 end
 
-function addPositionComponent(entity, component)
-    addComponent('position', entity, component)
+function addTransformComponent(entity, component)
+    addComponent('transform', entity, component)
 end
 
 function addColorComponent(entity, component)
