@@ -11,11 +11,11 @@ _G.components = {
 }
 
 function PositionComponent(x,y)
-    return {x=x, y=y, name="Position"}
+    return {x=x, y=y}
 end
 
 function ColorComponent(r,g,b,a)
-    return {r=r,g=g,b=b,a=a, name="Color"}
+    return {r=r,g=g,b=b,a=a}
 end
 
 function TimerComponent(time, oneshot)
