@@ -10,15 +10,15 @@ _G.components = {
     timer    = {}
 }
 
-function PositionComp(x,y)
+function PositionComponent(x,y)
     return {x=x, y=y, name="Position"}
 end
 
-function ColorComp(r,g,b,a)
+function ColorComponent(r,g,b,a)
     return {r=r,g=g,b=b,a=a, name="Color"}
 end
 
-function TimerComp(time, oneshot)
+function TimerComponent(time, oneshot)
     return {time=time, oneshot=oneshot}
 end
 
