@@ -12,8 +12,8 @@ _G.components = {
 }
 
 function TransformComponent(x,y,w,h)
-    w = w or 10
-    h = h or 10
+    w = w or 50
+    h = h or 50
     return {x=x, y=y, w=w, h=h}
 end
 
