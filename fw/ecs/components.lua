@@ -6,14 +6,22 @@ local util = require('fw.util.Util')
 
 _G.components = {
     transform = {},
+    velocity  = {},
     color     = {},
     timer     = {}
 }
 
 function TransformComponent(x,y,w,h)
-    w = w or 50
-    h = h or 50
+    w = w or 10
+    h = h or 10
     return {x=x, y=y, w=w, h=h}
+end
+
+function VelocityComponent(dx,dy, speed)
+    dx = dx or 50
+    dy = dy or 50
+    speed = speed or 10
+    return {dx=dx, dy=dy,speed=speed}
 end
 
 function ColorComponent(r,g,b,a)
@@ -36,6 +44,10 @@ end
 
 function addTransformComponent(entity, component)
     addComponent('transform', entity, component)
+end
+
+function addVelocityComponent(entity, component)
+    addComponent('velocity', entity, component)
 end
 
 function addColorComponent(entity, component)

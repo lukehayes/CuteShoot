@@ -16,7 +16,7 @@ function systemDraw(entities)
             love.graphics.rectangle("fill", transform.x, transform.y,transform.w,transform.h)
         else
             love.graphics.setColor(1,0,1,1)
-            love.graphics.rectangle("fill", transform.x, transform.y,50,50)
+            love.graphics.rectangle("fill", transform.x, transform.y, 1,1)
         end
     end
 end
@@ -27,8 +27,13 @@ end
 function systemMove(entities, delta)
     for i=1, #entities,1 do
         transform = hasComponent(entities, i, "transform")
+        velocity  = hasComponent(entities, i, "velocity")
 
-        if(transform) then
+
+        if(velocity) then
+            transform.x = transform.x + velocity.dx + velocity.speed * delta;
+            transform.y = transform.y + velocity.dy + velocity.speed * delta;
+        else
             transform.x = transform.x + 100 * delta;
             transform.y = transform.y + 100 * delta;
         end
